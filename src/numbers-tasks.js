@@ -353,8 +353,20 @@ function getSumOfDigits(num) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num) {
+  let i = 0;
+  let value = num;
+  while (value % 2 === 0) {
+    i = value / 2;
+
+    value = i;
+  }
+
+  if (value === 1) {
+    return true;
+  }
+
+  return false;
 }
 
 /**
@@ -367,8 +379,8 @@ function isPowerOfTwo(/* num */) {
  *   0 => 0
  *   Math.PI / 2 => 1
  */
-function getSine(/* num */) {
-  throw new Error('Not implemented');
+function getSine(num) {
+  return Math.sin(num);
 }
 
 /**

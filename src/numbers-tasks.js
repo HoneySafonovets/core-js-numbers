@@ -274,21 +274,26 @@ function getCube(num) {
  *   10 => 55
  */
 function getFibonacciNumber(index) {
-  if (index === 0) {
-    return 0;
-  }
   if (index === 1) {
     return 1;
   }
-  let firstVar = 0;
-  let secondVar = 1;
-  let i = 0;
+  if (index === 0) {
+    return 0;
+  }
+  let firstVar = 1;
+  let secondVar = 0;
+  let fibSum = 0;
+  let i = 1;
+
   while (i < index) {
-    secondVar += firstVar;
-    firstVar = secondVar - firstVar;
+    fibSum = firstVar + secondVar;
+    secondVar = firstVar;
+    firstVar = fibSum;
+
     i += 1;
   }
-  return firstVar;
+
+  return fibSum;
 }
 
 /**
